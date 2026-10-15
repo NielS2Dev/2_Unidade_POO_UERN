@@ -1,3 +1,4 @@
+package Gabarito;
 public class Livro extends Publicacao {
     private double preco;
 

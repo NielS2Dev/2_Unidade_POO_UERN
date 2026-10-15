@@ -1,3 +1,4 @@
+package Gabarito;
 public class Publicacao {
     private String titulo;
     private String autor;

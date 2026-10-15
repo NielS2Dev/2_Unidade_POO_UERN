@@ -1,3 +1,4 @@
+package Gabarito;
 public class Exercicio {
     public static void main(String args[]) {
         // Dados informados: Titulo, Autor
