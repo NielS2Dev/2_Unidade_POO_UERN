@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" prefWidth="1280" prefHeight="720" minWidth="1280" minHeight="720" maxWidth="1280" maxHeight="720" styleClass="splash-root" stylesheets="@style.css">
+  <VBox alignment="CENTER" spacing="18">
+    <StackPane prefWidth="170" prefHeight="170" maxWidth="170" maxHeight="170" styleClass="logo-box">
+      <!-- Troque este Label por um ImageView com sua logo -->
+      <Label text="NG" styleClass="logo-text"/>
+    </StackPane>
+    <Label text="NGameCritics" styleClass="splash-title"/>
+    <Label text="Catalogue, avalie e comente seus jogos" styleClass="splash-sub"/>
+    <ProgressIndicator prefWidth="36" prefHeight="36" maxWidth="36" maxHeight="36"/>
+  </VBox>
+</StackPane>

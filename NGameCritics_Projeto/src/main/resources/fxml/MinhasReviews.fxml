@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TelaController" prefWidth="1280" prefHeight="720" minWidth="1280" minHeight="720" maxWidth="1280" maxHeight="720" stylesheets="@style.css">
+  <left>
+    <VBox prefWidth="240" spacing="8" styleClass="sidebar">
+      <padding><Insets top="24" right="16" bottom="24" left="16"/></padding>
+      <Label text="NGameCritics" styleClass="sidebar-logo"><padding><Insets bottom="20" left="6"/></padding></Label>
+      <Button fx:id="btnCatalogo" text="Catálogo" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#irCatalogo"/>
+      <Button fx:id="btnReviews" text="Minhas reviews" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn nav-btn-active" onAction="#irMinhasReviews"/>
+      <Button fx:id="btnAvaliacoes" text="Minhas avaliações" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#irMinhasAvaliacoes"/>
+      <Button fx:id="btnCadastrar" text="Cadastrar jogo" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#irCadastrarJogo"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Button fx:id="btnSair" text="Sair" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#sair"/>
+    </VBox>
+  </left>
+  <center>
+    <BorderPane>
+      <top>
+        <HBox prefHeight="68" alignment="CENTER_LEFT" spacing="12" styleClass="topbar">
+          <padding><Insets left="28" right="28"/></padding>
+          <Label text="Minhas reviews" styleClass="topbar-title"/>
+          <Region HBox.hgrow="ALWAYS"/>
+          <VBox alignment="CENTER_RIGHT"><Label fx:id="lblNick" text="antoniel" styleClass="field-label"/><Label fx:id="lblNivel" text="Membro" styleClass="muted"/></VBox>
+          <StackPane prefWidth="42" prefHeight="42" maxWidth="42" maxHeight="42" styleClass="avatar"><Label fx:id="lblInicial" text="A" styleClass="avatar-text"/></StackPane>
+        </HBox>
+      </top>
+      <center>
+        <VBox spacing="16" styleClass="content">
+          <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+          <Label text="Minhas reviews" styleClass="h1"/>
+          <TableView fx:id="tbReviews" VBox.vgrow="ALWAYS"><columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/></columnResizePolicy><columns><TableColumn text="Jogo" prefWidth="260"/><TableColumn text="Título" prefWidth="320"/><TableColumn text="Data" prefWidth="140"/></columns></TableView>
+          <HBox spacing="12" alignment="CENTER_RIGHT"><Button fx:id="btnEditarReview" text="Editar" styleClass="btn-soft" onAction="#editarReview"/><Button fx:id="btnExcluirReview" text="Excluir" styleClass="btn-danger" onAction="#excluirReview"/></HBox>
+        </VBox>
+      </center>
+    </BorderPane>
+  </center>
+</BorderPane>
