@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TelaController" prefWidth="1280" prefHeight="720" minWidth="1280" minHeight="720" maxWidth="1280" maxHeight="720" stylesheets="@style.css">
+  <left>
+    <VBox prefWidth="240" spacing="8" styleClass="sidebar">
+      <padding><Insets top="24" right="16" bottom="24" left="16"/></padding>
+      <Label text="NGameCritics" styleClass="sidebar-logo"><padding><Insets bottom="20" left="6"/></padding></Label>
+      <Button fx:id="btnCatalogo" text="Catálogo" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn nav-btn-active" onAction="#irCatalogo"/>
+      <Button fx:id="btnReviews" text="Minhas reviews" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#irMinhasReviews"/>
+      <Button fx:id="btnAvaliacoes" text="Minhas avaliações" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#irMinhasAvaliacoes"/>
+      <Button fx:id="btnCadastrar" text="Cadastrar jogo" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#irCadastrarJogo"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Button fx:id="btnSair" text="Sair" maxWidth="Infinity" alignment="CENTER_LEFT" styleClass="nav-btn" onAction="#sair"/>
+    </VBox>
+  </left>
+  <center>
+    <BorderPane>
+      <top>
+        <HBox prefHeight="68" alignment="CENTER_LEFT" spacing="12" styleClass="topbar">
+          <padding><Insets left="28" right="28"/></padding>
+          <Label text="Catálogo" styleClass="topbar-title"/>
+          <Region HBox.hgrow="ALWAYS"/>
+          <VBox alignment="CENTER_RIGHT"><Label fx:id="lblNick" text="antoniel" styleClass="field-label"/><Label fx:id="lblNivel" text="Membro" styleClass="muted"/></VBox>
+          <StackPane prefWidth="42" prefHeight="42" maxWidth="42" maxHeight="42" styleClass="avatar"><Label fx:id="lblInicial" text="A" styleClass="avatar-text"/></StackPane>
+        </HBox>
+      </top>
+      <center>
+        <VBox spacing="16" styleClass="content">
+          <padding><Insets top="24" right="28" bottom="16" left="28"/></padding>
+          <HBox alignment="CENTER_LEFT"><Label text="Catálogo de Jogos" styleClass="h1"/><Region HBox.hgrow="ALWAYS"/><Button fx:id="btnNovoJogo" text="+ Novo jogo" styleClass="btn-primary" onAction="#irCadastrarJogo"/></HBox>
+          <HBox spacing="12" alignment="CENTER_LEFT">
+            <TextField fx:id="txtBusca" promptText="Buscar jogo pelo nome..." HBox.hgrow="ALWAYS"/>
+            <ComboBox fx:id="cbGenero" promptText="Gênero" prefWidth="170"><items><FXCollections fx:factory="observableArrayList"><String fx:value="Ação"/><String fx:value="RPG"/><String fx:value="FPS"/><String fx:value="Corrida"/><String fx:value="Luta"/></FXCollections></items></ComboBox>
+            <ComboBox fx:id="cbPlataforma" promptText="Plataforma" prefWidth="170"><items><FXCollections fx:factory="observableArrayList"><String fx:value="PC"/><String fx:value="Xbox"/><String fx:value="PlayStation"/><String fx:value="Switch"/></FXCollections></items></ComboBox>
+            <CheckBox fx:id="chkPromocao" text="Em promoção"/>
+          </HBox>
+          <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+            <!-- Os cards serão gerados em Java a partir da tabela JOGO. Estes 5 são só de exemplo. -->
+            <FlowPane fx:id="flowJogos" hgap="20" vgap="20">
+              <padding><Insets top="6" right="6" bottom="12" left="6"/></padding>
+              <VBox prefWidth="210" prefHeight="330" styleClass="game-card" onMouseClicked="#abrirDetalhe">
+              <StackPane prefHeight="225" alignment="TOP_LEFT" styleClass="game-cover">
+                <!-- Capa: troque por ImageView (fitWidth=210, fitHeight=225) -->
+                <Label text="PROMOÇÃO" styleClass="badge-promo"><StackPane.margin><Insets top="10" left="10"/></StackPane.margin></Label>
+              </StackPane>
+              <VBox spacing="4"><padding><Insets top="12" right="14" bottom="12" left="14"/></padding>
+                <Label text="Nome do Jogo 1" styleClass="game-title"/>
+                <Label text="PC • Xbox" styleClass="game-meta"/>
+                <HBox alignment="CENTER_LEFT"><Label text="R$ 199,90" styleClass="game-price"/><Region HBox.hgrow="ALWAYS"/><Label text="★ 4.5" styleClass="game-rating"/></HBox>
+              </VBox>
+            </VBox>
+              <VBox prefWidth="210" prefHeight="330" styleClass="game-card" onMouseClicked="#abrirDetalhe">
+              <StackPane prefHeight="225" alignment="TOP_LEFT" styleClass="game-cover">
+                <!-- Capa: troque por ImageView (fitWidth=210, fitHeight=225) -->
+                <Label text="PROMOÇÃO" styleClass="badge-promo"><StackPane.margin><Insets top="10" left="10"/></StackPane.margin></Label>
+              </StackPane>
+              <VBox spacing="4"><padding><Insets top="12" right="14" bottom="12" left="14"/></padding>
+                <Label text="Nome do Jogo 2" styleClass="game-title"/>
+                <Label text="PC • Xbox" styleClass="game-meta"/>
+                <HBox alignment="CENTER_LEFT"><Label text="R$ 199,90" styleClass="game-price"/><Region HBox.hgrow="ALWAYS"/><Label text="★ 4.5" styleClass="game-rating"/></HBox>
+              </VBox>
+            </VBox>
+              <VBox prefWidth="210" prefHeight="330" styleClass="game-card" onMouseClicked="#abrirDetalhe">
+              <StackPane prefHeight="225" alignment="TOP_LEFT" styleClass="game-cover">
+                <!-- Capa: troque por ImageView (fitWidth=210, fitHeight=225) -->
+                <Label text="PROMOÇÃO" styleClass="badge-promo"><StackPane.margin><Insets top="10" left="10"/></StackPane.margin></Label>
+              </StackPane>
+              <VBox spacing="4"><padding><Insets top="12" right="14" bottom="12" left="14"/></padding>
+                <Label text="Nome do Jogo 3" styleClass="game-title"/>
+                <Label text="PC • Xbox" styleClass="game-meta"/>
+                <HBox alignment="CENTER_LEFT"><Label text="R$ 199,90" styleClass="game-price"/><Region HBox.hgrow="ALWAYS"/><Label text="★ 4.5" styleClass="game-rating"/></HBox>
+              </VBox>
+            </VBox>
+              <VBox prefWidth="210" prefHeight="330" styleClass="game-card" onMouseClicked="#abrirDetalhe">
+              <StackPane prefHeight="225" alignment="TOP_LEFT" styleClass="game-cover">
+                <!-- Capa: troque por ImageView (fitWidth=210, fitHeight=225) -->
+                <Label text="PROMOÇÃO" styleClass="badge-promo"><StackPane.margin><Insets top="10" left="10"/></StackPane.margin></Label>
+              </StackPane>
+              <VBox spacing="4"><padding><Insets top="12" right="14" bottom="12" left="14"/></padding>
+                <Label text="Nome do Jogo 4" styleClass="game-title"/>
+                <Label text="PC • Xbox" styleClass="game-meta"/>
+                <HBox alignment="CENTER_LEFT"><Label text="R$ 199,90" styleClass="game-price"/><Region HBox.hgrow="ALWAYS"/><Label text="★ 4.5" styleClass="game-rating"/></HBox>
+              </VBox>
+            </VBox>
+              <VBox prefWidth="210" prefHeight="330" styleClass="game-card" onMouseClicked="#abrirDetalhe">
+              <StackPane prefHeight="225" alignment="TOP_LEFT" styleClass="game-cover">
+                <!-- Capa: troque por ImageView (fitWidth=210, fitHeight=225) -->
+                <Label text="PROMOÇÃO" styleClass="badge-promo"><StackPane.margin><Insets top="10" left="10"/></StackPane.margin></Label>
+              </StackPane>
+              <VBox spacing="4"><padding><Insets top="12" right="14" bottom="12" left="14"/></padding>
+                <Label text="Nome do Jogo 5" styleClass="game-title"/>
+                <Label text="PC • Xbox" styleClass="game-meta"/>
+                <HBox alignment="CENTER_LEFT"><Label text="R$ 199,90" styleClass="game-price"/><Region HBox.hgrow="ALWAYS"/><Label text="★ 4.5" styleClass="game-rating"/></HBox>
+              </VBox>
+            </VBox>
+            </FlowPane>
+          </ScrollPane>
+        </VBox>
+      </center>
+    </BorderPane>
+  </center>
+</BorderPane>

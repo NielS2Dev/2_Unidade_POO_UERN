@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="720" maxWidth="1280" minHeight="720" minWidth="1280" prefHeight="720" prefWidth="1280" styleClass="auth-bg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TelaController">
+  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="580" prefWidth="960" styleClass="auth-card">
+    <VBox alignment="CENTER" prefWidth="400" spacing="14" styleClass="auth-left">
+      <padding><Insets left="30" right="30" /></padding>
+         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@gtavi.png" />
+            </image>
+         </ImageView>
+      <StackPane maxHeight="80" maxWidth="80" prefHeight="80" prefWidth="80" styleClass="badge-circle"><Label style="-fx-font-size: 26px;" styleClass="logo-text" text="NG" /></StackPane>
+      <Label styleClass="auth-left-title" text="Bem-vindo!" />
+      <Label styleClass="auth-left-sub" text="Acesse sua conta para continuar de onde parou." wrapText="true" />
+    </VBox>
+    <VBox alignment="CENTER_LEFT" prefWidth="560" spacing="8" styleClass="auth-right">
+      <padding><Insets bottom="30" left="50" right="50" top="30" /></padding>
+      <Label styleClass="h1" text="Entrar" />
+      <Label styleClass="muted" text="Digite seu usuário e senha" />
+      <Label styleClass="field-label" text="Usuário"><padding><Insets top="10" /></padding></Label>
+      <TextField fx:id="txtUsuario" promptText="seu usuário" />
+      <Label styleClass="field-label" text="Senha"><padding><Insets top="6" /></padding></Label>
+      <PasswordField fx:id="txtSenha" promptText="••••••••" />
+      <HBox alignment="CENTER_LEFT">
+        <CheckBox fx:id="chkLembrar" text="Lembrar de mim" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Hyperlink fx:id="lnkEsqueci" onAction="#esqueciSenha" styleClass="link" text="Esqueci a senha" />
+      </HBox>
+      <Label fx:id="lblErro" managed="false" styleClass="error-label" text="Usuário ou senha inválidos" visible="false" />
+      <Button fx:id="btnEntrar" defaultButton="true" maxWidth="Infinity" onAction="#entrar" styleClass="btn-primary" text="ENTRAR" />
+      <HBox alignment="CENTER" spacing="4"><Label styleClass="muted" text="Não tem conta?" /><Hyperlink fx:id="lnkCadastro" onAction="#irCadastro" styleClass="link" text="Cadastre-se" /></HBox>
+    </VBox>
+  </HBox>
+</StackPane>
