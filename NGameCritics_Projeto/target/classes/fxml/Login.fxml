@@ -23,20 +23,21 @@
                <Image url="@gtavi.png" />
             </image>
          </ImageView>
-      <StackPane maxHeight="80" maxWidth="80" prefHeight="80" prefWidth="80" styleClass="badge-circle"><Label style="-fx-font-size: 26px;" styleClass="logo-text" text="NG" /></StackPane>
-      <Label styleClass="auth-left-title" text="Bem-vindo!" />
-      <Label styleClass="auth-left-sub" text="Acesse sua conta para continuar de onde parou." wrapText="true" />
+      <Label styleClass="auth-left-title" text="Bem-vindo :)" />
+      <Label styleClass="auth-left-sub" text="https://github.com/niels2dev" wrapText="true" />
     </VBox>
     <VBox alignment="CENTER_LEFT" prefWidth="560" spacing="8" styleClass="auth-right">
       <padding><Insets bottom="30" left="50" right="50" top="30" /></padding>
-      <Label styleClass="h1" text="Entrar" />
-      <Label styleClass="muted" text="Digite seu usuário e senha" />
+      <Label styleClass="h1" text="Entrar">
+            <VBox.margin>
+               <Insets bottom="40.0" left="180.0" />
+            </VBox.margin></Label>
       <Label styleClass="field-label" text="Usuário"><padding><Insets top="10" /></padding></Label>
       <TextField fx:id="txtUsuario" promptText="seu usuário" />
       <Label styleClass="field-label" text="Senha"><padding><Insets top="6" /></padding></Label>
       <PasswordField fx:id="txtSenha" promptText="••••••••" />
       <HBox alignment="CENTER_LEFT">
-        <CheckBox fx:id="chkLembrar" text="Lembrar de mim" />
+        <CheckBox fx:id="chkLembrar" text="Lembrar da Conta" />
         <Region HBox.hgrow="ALWAYS" />
         <Hyperlink fx:id="lnkEsqueci" onAction="#esqueciSenha" styleClass="link" text="Esqueci a senha" />
       </HBox>

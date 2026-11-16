@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 
-<StackPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TelaController" prefWidth="1280" prefHeight="720" minWidth="1280" minHeight="720" maxWidth="1280" maxHeight="720" styleClass="auth-bg" stylesheets="@style.css">
-  <HBox prefWidth="960" prefHeight="580" maxWidth="-Infinity" maxHeight="-Infinity" styleClass="auth-card">
-    <VBox prefWidth="400" alignment="CENTER" spacing="14" styleClass="auth-left">
-      <padding><Insets left="30" right="30"/></padding>
-      <StackPane prefWidth="80" prefHeight="80" maxWidth="80" maxHeight="80" styleClass="badge-circle"><Label text="NG" styleClass="logo-text" style="-fx-font-size: 26px;"/></StackPane>
-      <Label text="Crie sua conta" styleClass="auth-left-title"/>
-      <Label text="Entre para a comunidade, avalie e comente jogos." styleClass="auth-left-sub" wrapText="true"/>
+<StackPane maxHeight="720" maxWidth="1280" minHeight="720" minWidth="1280" prefHeight="720" prefWidth="1280" styleClass="auth-bg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TelaController">
+  <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="580" prefWidth="960" styleClass="auth-card">
+    <VBox alignment="CENTER" prefWidth="400" spacing="14" styleClass="auth-left">
+      <padding><Insets left="30" right="30" /></padding>
+         <ImageView fitHeight="150.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@UERN.png" />
+            </image>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <effect>
+               <DropShadow height="23.96" radius="5.49" spread="0.27" width="0.0">
+                  <color>
+                     <Color red="1.0" green="0.0555555559694767" blue="0.8268518447875977" opacity="0.7699999809265137" />
+                  </color>
+               </DropShadow>
+            </effect>
+         </ImageView>
+      <Label styleClass="auth-left-title" text="Crie sua conta" />
+      <Label styleClass="auth-left-sub" text="https://github.com/niels2dev" wrapText="true" />
     </VBox>
-    <VBox prefWidth="560" alignment="CENTER_LEFT" spacing="8" styleClass="auth-right">
-      <padding><Insets top="30" right="50" bottom="30" left="50"/></padding>
-      <Label text="Cadastro" styleClass="h1"/>
-      <Label text="Nome completo" styleClass="field-label"/>
-      <TextField fx:id="txtNomeCompleto" promptText="seu nome completo"/>
-      <Label text="Nick" styleClass="field-label"/>
-      <TextField fx:id="txtNick" promptText="seu nick"/>
-      <Label text="E-mail" styleClass="field-label"/>
-      <TextField fx:id="txtEmail" promptText="voce@email.com"/>
-      <Label text="Senha" styleClass="field-label"/>
-      <PasswordField fx:id="txtSenha" promptText="••••••••"/>
-      <Label text="Foto de perfil (opcional)" styleClass="field-label"/>
-      <HBox alignment="CENTER_LEFT" spacing="12"><Button fx:id="btnEscolherFoto" text="Escolher imagem" styleClass="btn-outline" onAction="#escolherFoto"/><Label fx:id="lblArquivo" text="nenhum arquivo" styleClass="muted"/></HBox>
-      <Label fx:id="lblErro" styleClass="error-label" visible="false" managed="false"/>
-      <Button fx:id="btnCriarConta" text="CRIAR CONTA" maxWidth="Infinity" styleClass="btn-primary" onAction="#criarConta"/>
-      <HBox alignment="CENTER" spacing="4"><Label text="Já tem conta?" styleClass="muted"/><Hyperlink fx:id="lnkEntrar" text="Entrar" styleClass="link" onAction="#irLogin"/></HBox>
+    <VBox alignment="CENTER_LEFT" prefWidth="560" spacing="8" styleClass="auth-right">
+      <padding><Insets bottom="30" left="50" right="50" top="30" /></padding>
+      <Label styleClass="h1" text="Cadastro">
+            <VBox.margin>
+               <Insets left="160.0" />
+            </VBox.margin></Label>
+      <Label styleClass="field-label" text="Nome completo" />
+      <TextField fx:id="txtNomeCompleto" />
+      <Label styleClass="field-label" text="Nick" />
+      <TextField fx:id="txtNick" />
+      <Label styleClass="field-label" text="E-mail" />
+      <TextField fx:id="txtEmail" />
+      <Label styleClass="field-label" text="Senha" />
+      <PasswordField fx:id="txtSenha" />
+      <Label styleClass="field-label" text="Foto de perfil (opcional)" />
+      <HBox alignment="CENTER_LEFT" spacing="12"><Button fx:id="btnEscolherFoto" onAction="#escolherFoto" styleClass="btn-outline" text="Escolher imagem" /><Label fx:id="lblArquivo" styleClass="muted" text="Upar seu arquivo" /></HBox>
+      <Label fx:id="lblErro" managed="false" styleClass="error-label" visible="false" />
+      <Button fx:id="btnCriarConta" maxWidth="Infinity" onAction="#criarConta" styleClass="btn-primary" text="CRIAR CONTA" />
+      <HBox alignment="CENTER" spacing="4"><Label styleClass="muted" text="Já tem conta?" /><Hyperlink fx:id="lnkEntrar" onAction="#irLogin" styleClass="link" text="Entrar" /></HBox>
     </VBox>
   </HBox>
 </StackPane>

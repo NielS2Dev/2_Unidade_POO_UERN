@@ -14,7 +14,7 @@ public class Main extends Application {
         Navegador.ir("Splash");
         stage.show();
 
-        PauseTransition espera = new PauseTransition(Duration.seconds(3));
+        PauseTransition espera = new PauseTransition(Duration.seconds(5));
         espera.setOnFinished(e -> Navegador.ir("Login"));
         espera.play();
     }
